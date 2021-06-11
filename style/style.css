@@ -73,19 +73,13 @@ main > * {
 	padding-inline: 0.3em;
 }
 
-.btn.about a {
+.btn.about a, .btn.contact a {
 	color: var(--white);
 }
-.btn.about {
+.btn.about, .btn.contact {
 	border: 1px solid var(--white);
 }
 
-.btn.contact a {
-	color: var(--black);
-}
-.btn.contact {
-	background: var(--white);
-}
 
 /* MOBIL  HEADER  ====================================================================================== */
 header{	
