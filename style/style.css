@@ -48,7 +48,7 @@ svg {
 main {
 	display: grid;
 	grid-template-columns:
-		minmax(1rem, 1fr) minmax(auto, 1600px)
+		minmax(1rem, 1fr) minmax(auto, 1000px)
 		minmax(1rem, 1fr);
 }
 
@@ -194,7 +194,7 @@ header > *:nth-child(2) {
 	text-align: left;
 }
 #main_about .skills_container > * img{
-	width: 7rem;
+	width: 4rem;
 }
 #main_about .skills_container > *:nth-child(odd){
 	flex-direction: row-reverse;
@@ -328,6 +328,8 @@ header > *:nth-child(2) {
 		grid-template-columns: repeat(2, 1fr);
 	}
 
+	/*TODO Fix størrelser på tingene så de bliver pæne igen*/
+
 	#section_themes {
 		height: 80vh;
 		grid-column: 1;
@@ -341,7 +343,7 @@ header > *:nth-child(2) {
 	#section_themes > h2 {
 		display: block;
 		text-orientation: mixed;
-		writing-mode: sideways-lr;
+		writing-mode: vertical-rl;
 
 		transform: skew(25deg) rotate(24deg);
 
@@ -392,7 +394,7 @@ header > *:nth-child(2) {
 		transform: skew(22deg) rotate(20deg) translateY(3rem);
 		letter-spacing: -0.2rem;
 	}
-	#section_me > div {
+	#section_me > div, #section_me img {
 		max-width: 20vw;
 		max-height: 20vw;
 	}
@@ -816,6 +818,10 @@ header > *:nth-child(2) {
 	.skills_container h3{
 		grid-column: 2/3;
 	}
+	.skills_container h4{
+		margin-left: 1rem;
+	}
+	
 	
 	.skills_container div:nth-child(2){
 		grid-column: 2/3;
