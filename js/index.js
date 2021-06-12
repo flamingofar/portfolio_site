@@ -16,7 +16,7 @@ const canvas = document.querySelector(".canvas");
 const reflect = document.querySelector(".reflect");
 
 const defaultHeading = "Mit navn er Malte Skjoldager";
-const defaultImg = "assets/img/mig.jpg";
+const defaultImg = "assets/img/mig/mig.webp";
 
 window.addEventListener("load", sidenVises);
 
@@ -39,31 +39,31 @@ function sidenVises() {
 }
 
 function changeImg1() {
-	const newImg = "assets/img/test.jpg";
+	const newImg = "assets/img/canvas_img_tema1.png";
 	canvas.setAttribute("src", newImg);
 	reflect.setAttribute("src", newImg);
 	heading.innerHTML = temaOneH3;
 }
 function changeImg2() {
-	const newImg = "assets/img/test.jpg";
+	const newImg = "assets/img/02/png/canvas_img_tema2.png";
 	canvas.setAttribute("src", newImg);
 	reflect.setAttribute("src", newImg);
 	heading.innerHTML = temaTwoH3;
 }
 function changeImg3() {
-	const newImg = "assets/img/test.jpg";
+	const newImg = "assets/img/03/png/canvas_img_tema3.png";
 	canvas.setAttribute("src", newImg);
 	reflect.setAttribute("src", newImg);
 	heading.innerHTML = temaThreeH3;
 }
 function changeImg4() {
-	const newImg = "assets/img/test.jpg";
+	const newImg = "assets/img/04/png/canvas_img_tema4.png";
 	canvas.setAttribute("src", newImg);
 	reflect.setAttribute("src", newImg);
 	heading.innerHTML = temaFourH3;
 }
 function changeImg5() {
-	const newImg = "assets/img/test.jpg";
+	const newImg = "assets/img/05/png/canvas_img_tema5.png";
 	canvas.setAttribute("src", newImg);
 	reflect.setAttribute("src", newImg);
 	heading.innerHTML = temaFiveH3;
