@@ -18,10 +18,20 @@ const reflect = document.querySelector(".reflect");
 const defaultHeading = "Mit navn er Malte Skjoldager";
 const defaultImg = "assets/img/mig/mig.webp";
 
+
+
+const title = document.querySelector(".title")
+const eyeSvg = document.querySelectorAll(".eye")
+const downloadSvg = document.querySelectorAll(".download")
+const githubSvg = document.querySelectorAll(".github")
+
+
+
+
+
 window.addEventListener("load", sidenVises);
 
 function sidenVises() {
-	console.log(temaThreeH3);
 	temaOne.addEventListener("mouseover", changeImg1);
 	temaOne.addEventListener("mouseout", changeDefault);
 
@@ -36,6 +46,10 @@ function sidenVises() {
 
 	temaFive.addEventListener("mouseover", changeImg5);
 	temaFive.addEventListener("mouseout", changeDefault);
+
+	eyeSvg.forEach(addHoverEye)
+	downloadSvg.forEach(addHoverDownload)
+	githubSvg.forEach(addHoverGithub)
 }
 
 function changeImg1() {
@@ -73,4 +87,33 @@ function changeDefault() {
 	canvas.setAttribute("src", defaultImg);
 	reflect.setAttribute("src", defaultImg);
 	heading.innerHTML = defaultHeading;
+}
+
+function defaultTitle() {
+	title.innerHTML="Muligheder"
+}
+
+function addHoverEye(el) {
+	el.addEventListener("mouseover", changeTxt)
+	el.addEventListener("mouseout", defaultTitle)
+
+	function changeTxt(){
+		title.innerHTML="Website"
+	}
+}
+function addHoverDownload(el) {
+	el.addEventListener("mouseover", changeTxt)
+	el.addEventListener("mouseout", defaultTitle)
+
+	function changeTxt(){
+		title.innerHTML="Dokumentation"
+	}
+}
+function addHoverGithub(el) {
+	el.addEventListener("mouseover", changeTxt)
+	el.addEventListener("mouseout", defaultTitle)
+
+	function changeTxt(){
+		title.innerHTML="Github"
+	}
 }
