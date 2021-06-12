@@ -361,7 +361,7 @@ header > *:nth-child(2) {
 
 	.svg_row {
 		display: flex;
-		justify-content: end;
+		justify-content: flex-end;
 	
 	}
 	.svg_row svg {
@@ -874,9 +874,13 @@ header > *:nth-child(2) {
 		grid-column: 3/4;
 		grid-row: 5/6;
 	}
-	.skills_container div:last-child{
+	.skills_container div:nth-child(10){
 		grid-column: 4/5;
 		grid-row: 2/3;
+	}
+	.skills_container div:last-child{
+		grid-column: 4/5;
+		grid-row: 3/4;
 	}
 
 	
