@@ -19,7 +19,10 @@ body {
 	font-family: "Cutive Mono", monospace;
 	color: var(--white);
 	background-color: var(--black);
+
+	
 }
+
 
 img {
 	width: 100%;
@@ -45,7 +48,8 @@ a {
 }
 
 svg {
-	fill: white;
+	fill: var(--white);
+	width: 100%;
 }
 
 main {
@@ -162,7 +166,7 @@ header > *:nth-child(2) {
 	
 	margin-top: 4rem;
 }
-.tema_svg_container svg{
+.tema_svg_container a{
 	width: 4rem;
 	margin-inline: .5rem;
 }
@@ -275,6 +279,7 @@ header > *:nth-child(2) {
 
 /* DESKTOP INDEX MEDIAQUERIES ====================================================================================== */
 @media only screen and (min-width: 600px) {
+	
 	main {
 		display: grid;
 	}
@@ -350,7 +355,40 @@ header > *:nth-child(2) {
 	}
 	#section_hero h3:hover::before{
 		transform: translate(-.4rem, -.4rem);
+	}
 
+	.github, .eye, .download{
+		
+		position: relative;
+	}
+	.github:before, .eye::before, .download::before{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: var(--randomColor);
+		z-index: -1;
+		opacity: 0;
+		transition: transform 200ms, opacity 100ms;
+	}
+	.github:before {
+		-webkit-mask-image: url(../assets/svg/github.svg);
+    	mask-image: url(../assets/svg/github.svg);
+	}
+	.eye:before {
+		-webkit-mask-image: url(../assets/svg/eye.svg);
+    	mask-image: url(../assets/svg/eye.svg);
+	}
+	.download:before {
+		-webkit-mask-image: url(../assets/svg/download.svg);
+    	mask-image: url(../assets/svg/download.svg);
+	}
+
+	.github:hover::before, .eye:hover::before, .download:hover::before {
+		opacity: 1;
+		transform: translate(.4rem, -.4rem);
 	}
 
 
@@ -376,9 +414,7 @@ header > *:nth-child(2) {
 	}
 
 
-	.hover {
-		color: var(--randomColor);
-	}
+	
 
 	
 
