@@ -3,7 +3,7 @@
 	--white: hsl(0, 0%, 81%);
 	--black: hsl(0, 0%, 0%);
 
-	--randomColor: #ff67f2;
+	--randomColor: ;
 }
 *,
 ::after,
@@ -36,6 +36,7 @@ h2 {
 h3 {
 	font-size: 1.8rem;
 	color: var(--white);
+	
 }
 
 a {
@@ -299,8 +300,60 @@ header > *:nth-child(2) {
 	}
 	header h1, header h2, header .btn-container{
 		place-self: center;
-		
 	}
+
+	h1, h3{
+		position: relative;
+	}
+	h1::before {
+		content: "Malte Skjoldager";
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		color: var(--randomColor);
+		opacity: .8;
+		z-index: -1;
+		transition: transform 200ms;
+	}
+	h1:hover::before {
+		transform: translate(.2rem, -.2rem);
+
+	}
+	#section_hero h3::before{
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		color: var(--randomColor);
+		z-index: -1;
+		transition: transform 200ms;
+		letter-spacing: -.2rem;
+	}
+
+	#section_hero h3:first-child::before{
+		content: "Tema 1 | Introuge";
+	}
+	#section_hero h3:nth-child(2)::before{
+		content: "Tema 2 | Grundlæggende Web";
+	}
+	#section_hero h3:nth-child(3)::before{
+		content: "Tema 3 | Grundlæggende UX";
+	}
+	#section_hero h3:nth-child(4)::before{
+		content: "Tema 4 | Grundlæggende Animation";
+	}
+	#section_hero h3:last-child::before{
+		content: "Tema 5 | Grundlæggende Indhold";
+	}
+	#section_hero h3:hover::before{
+		transform: translate(-.4rem, -.4rem);
+
+	}
+
+
 
 	.btn-container {
 		margin-inline: 0;
@@ -317,6 +370,12 @@ header > *:nth-child(2) {
 		padding-block: 0.3em;
 	}
 
+
+	.btn.about:hover, .btn.contact:hover {
+		background: var(--randomColor);
+	}
+
+
 	.hover {
 		color: var(--randomColor);
 	}
@@ -330,7 +389,7 @@ header > *:nth-child(2) {
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-	/*TODO Fix størrelser på tingene så de bliver pæne igen*/
+	
 
 	#section_themes {
 		height: 80vh;
@@ -340,7 +399,7 @@ header > *:nth-child(2) {
 
 		display: flex;
 		justify-content: center;
-		align-items: flex-end;
+		align-items: center;
 	}
 	#section_themes > h2 {
 		display: block;
@@ -350,7 +409,7 @@ header > *:nth-child(2) {
 		transform: skew(25deg) rotate(24deg);
 
 		padding-bottom: 2rem;
-		margin: 0 2rem 4rem 2rem;
+		margin: 0 2rem;
 	}
 	
 
@@ -361,7 +420,7 @@ header > *:nth-child(2) {
 
 	.svg_container {
 		display: block;
-		transform: skew(22deg) rotate(20deg) translateY(-2rem);
+		transform: skew(22deg) rotate(20deg) translateY(1.4rem);
 		width: 5rem;
 	}
 
@@ -707,7 +766,6 @@ header > *:nth-child(2) {
 
 /* DESKTOP TEMA 5 MEDIAQUERIES ====================================================================================== */
 @media only screen and (min-width: 600px) {
-	
 
 	.section1_tema5, .section2_tema5{
 		display: grid;
@@ -716,10 +774,12 @@ header > *:nth-child(2) {
 	
 	
 	.section1_tema5 h2{
+		position: relative;
 		grid-column: 4/8;
 		text-align: center;
 		padding-bottom: 4rem;
 	}
+	
 
 	.section1_tema5 .content_wrapper{
 		grid-column: 4/11;
