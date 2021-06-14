@@ -28,10 +28,10 @@ const githubSvg = document.querySelectorAll(".github")
 
 
 
-
 window.addEventListener("load", sidenVises);
 
 function sidenVises() {
+
 	temaOne.addEventListener("mouseover", changeImg1);
 	temaOne.addEventListener("mouseout", changeDefault);
 
@@ -51,6 +51,8 @@ function sidenVises() {
 	downloadSvg.forEach(addHoverDownload)
 	githubSvg.forEach(addHoverGithub)
 }
+
+
 
 function changeImg1() {
 	const newImg = "assets/img/canvas_img_tema1.png";
