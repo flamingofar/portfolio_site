@@ -47,6 +47,10 @@ a {
 	color: var(--white);
 }
 
+p {
+	line-height: 1.5rem;
+}
+
 svg {
 	fill: var(--white);
 	width: 100%;
@@ -294,6 +298,21 @@ iframe {
    padding-top: 57.25%;
 }
 
+.section2_tema5 .content_wrapper ul{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.section2_tema5 .content_wrapper ul li{
+	list-style: circle;
+	margin-bottom: 2rem;
+	margin-inline: 1rem;
+
+	
+	vertical-align: middle;
+}
+
 
 .section1_tema5 .iframewrapper {
 	
@@ -302,7 +321,7 @@ iframe {
    height: 0;
    padding-top: 56.25%;
 }
-.section1_tema5 video{
+.section2_tema5 video{
 	width: 100%;
 }
 
