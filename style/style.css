@@ -90,7 +90,7 @@ nav {
 }
 
 .close_menu_btn { 
-position: absolute;
+position: fixed;
 top: 2.5rem;
 right: 0;
 z-index: 20;
@@ -136,6 +136,7 @@ h2.openMenu {
 }
 
 nav ul {
+	position: fixed;
 	height: 100vh;
 	width: 100vw;
 	display: flex;
@@ -542,7 +543,7 @@ iframe {
 		margin-left: 3rem;
 	}
 	nav li a {
-		font-size: 1.5rem;
+		font-size: 1.4rem;
 	}
 
 
@@ -860,6 +861,7 @@ iframe {
 		grid-column: 1/5;
 		max-width: 60ch;
 		margin-inline: auto;
+		padding-inline: 1rem;
 	}
 	
 	.section1_tema2 .content_wrapper  .img1 {
@@ -938,6 +940,7 @@ iframe {
 	.section1_tema3 .content_wrapper p{
 		grid-column: 1/5;
 		column-count: 2;
+		column-gap: 3rem;
 	}
 	.section1_tema3 .content_wrapper p:nth-child(3){
 		column-count: 1;
@@ -975,6 +978,7 @@ iframe {
 	.section2_tema3 .content_wrapper p{
 		grid-column: 1/-1;
 		column-count: 2;
+		column-gap: 3rem;
 	}
 	.section2_tema3 .content_wrapper p:nth-child(3){
 		column-count: 1;
@@ -1020,6 +1024,7 @@ iframe {
 	.section1_tema4 .content_wrapper p{
 		grid-column: 1/5;
 		column-count: 2;
+		column-gap: 3rem;
 	}
 	.section1_tema4 .content_wrapper p:nth-child(3){
 		column-count: 1;
@@ -1056,6 +1061,7 @@ iframe {
 	.section2_tema4 .content_wrapper p{
 		grid-column: 1/-1;
 		column-count: 2;
+		column-gap: 3rem;
 	}
 	.section2_tema4 .content_wrapper p:nth-child(3){
 		column-count: 1;
