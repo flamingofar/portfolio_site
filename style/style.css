@@ -81,41 +81,53 @@ nav {
 	flex-direction: column;
 	align-items: flex-end;
 
+	pointer-events: none;
 	overflow-x: hidden;
 }
 
-nav .close_menu_btn { 
-position: relative;
-top: 2rem;
+.close_menu_btn { 
+position: absolute;
+top: 2.5rem;
+right: 0;
 z-index: 20;
 width: 3.5rem;
 height: 3.5rem;
+z-index: 100;
 
 cursor: pointer;
 }
 
 
-nav  .close_menu_btn div {
+.close_menu_btn div {
 	margin-inline: 0.5rem;
 
 	width: 3rem;
 	height: .1rem;
 	background: var(--white);
 }
-nav .close_menu_btn  div:first-child {
+.close_menu_btn  div:first-child {
 	transform: rotate(45deg);
 }
-nav .close_menu_btn div:last-child {
+.close_menu_btn div:last-child {
 	transform: rotate(-45deg);
 }
 
-nav h2 {
+
+.burger_menu {
+	position: absolute;
+	top: 0;
+	right: 0;
+
 	margin: .5rem .5rem 0 0;
 	text-orientation: mixed;
 	writing-mode: vertical-rl;
 	cursor: pointer;
+	z-index: 100;
+
+	border: solid 1px var(--white);
+	padding: .3em .1em;
 }
-nav h2.openMenu {
+h2.openMenu {
 	display: none;
 }
 
@@ -141,6 +153,7 @@ nav ul.openMenu {
 	transform: translateX(0);
 	opacity: 1;
 	transition:  200ms;
+	pointer-events: all;
 }
 
 nav li  {
@@ -267,6 +280,32 @@ header > *:nth-child(2) {
 	padding: 2rem 2rem 0 2rem;
 }
 
+iframe {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	inset: 0;
+}
+#main_tema .section3_tema4 .iframewrapper {
+   
+   position: relative;
+   width: 100%;
+   height: 0;
+   padding-top: 57.25%;
+}
+
+
+.section1_tema5 .iframewrapper {
+	
+   position: relative;
+   width: 100%;
+   height: 0;
+   padding-top: 56.25%;
+}
+.section1_tema5 video{
+	width: 100%;
+}
+
 /* MOBIL ABOUT ====================================================================================== */
 #main_about section{
 	display: grid;
@@ -281,7 +320,7 @@ header > *:nth-child(2) {
 
 #main_about .skills_container > *{
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
 	align-items: center;
 	margin-inline: 2rem;
 	margin-bottom: 0;
@@ -387,7 +426,7 @@ header > *:nth-child(2) {
 		margin-bottom: 4rem;
 	}
 
-	h1, h3{
+	h1, h3, a{
 		position: relative;
 	}
 	h1::before {
@@ -427,27 +466,29 @@ header > *:nth-child(2) {
 
 	}
 	
-	nav .close_menu_btn { 
+	.close_menu_btn { 
 		position: fixed;
-	top: 35vh;
+		top: 35vh;
+		right: 0;
+		margin-inline: 2rem;
 	}
 	
 	
-	nav  .close_menu_btn div {
+	.close_menu_btn div {
 		margin-inline: 0.5rem;
 	
 		width: 3rem;
 		height: .1rem;
 		background: var(--white);
 	}
-	nav .close_menu_btn  div:first-child {
+	.close_menu_btn  div:first-child {
 		transform: rotate(45deg);
 	}
-	nav .close_menu_btn div:last-child {
+	.close_menu_btn div:last-child {
 		transform: rotate(-45deg);
 	}
 	
-	nav h2 {
+	.burger_menu {
 		position: fixed;
 		top: 50%;
 		right: 0;
@@ -455,10 +496,10 @@ header > *:nth-child(2) {
 		border: solid 1px var(--white);
 		padding: 1em .5em
 	}
-	nav h2:hover {
+	.burger_menu:hover {
 		background-color: var(--randomColor);
 	}
-	nav h2.openMenu {
+	h2.openMenu {
 		display: none;
 	}
 	
@@ -479,14 +520,14 @@ header > *:nth-child(2) {
 	}
 	
 	nav li  {
-		margin: .5rem;
+		margin-left: 3rem;
 	}
 	nav li a {
 		font-size: 1.5rem;
 	}
 
 
-	#section_hero h3::before{
+	#section_hero h3::before {
 		position: absolute;
 		left: 0;
 		top: 0;
@@ -497,24 +538,46 @@ header > *:nth-child(2) {
 		transition: transform 200ms;
 		letter-spacing: -.2rem;
 	}
+	
+	header ul li a::before{
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		color: var(--randomColor);
+		z-index: -1;
+		transition: transform 200ms;
 
-	#section_hero h3:first-child::before{
+		opacity: 0;
+	}
+
+	#section_hero h3:first-child::before,
+	header ul li:first-child a::before
+	{
 		content: "Tema 1 | Introuge";
 	}
-	#section_hero h3:nth-child(2)::before{
+	#section_hero h3:nth-child(2)::before,
+	header ul li:nth-child(2) a::before{
 		content: "Tema 2 | Grundlæggende Web";
 	}
-	#section_hero h3:nth-child(3)::before{
+	#section_hero h3:nth-child(3)::before,
+	header ul li:nth-child(3) a::before{
 		content: "Tema 3 | Grundlæggende UX";
 	}
-	#section_hero h3:nth-child(4)::before{
+	#section_hero h3:nth-child(4)::before,
+	header ul li:nth-child(4) a::before{
 		content: "Tema 4 | Grundlæggende Animation";
 	}
-	#section_hero h3:last-child::before{
+	#section_hero h3:last-child::before,
+	header ul li:last-child a::before{
 		content: "Tema 5 | Grundlæggende Indhold";
 	}
-	#section_hero h3:hover::before{
+	#section_hero h3:hover::before, 
+	header ul li a:hover::before{
 		transform: translate(-.4rem, -.4rem);
+		opacity: 1;
+		transition: transform 200ms;
 	}
 
 	.github, .eye, .download{
@@ -687,6 +750,8 @@ header > *:nth-child(2) {
 		 align-items: flex-start;
 		 height: 80vh;
 	}
+
+	
 	.section_tema1 {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
@@ -774,6 +839,8 @@ header > *:nth-child(2) {
 	}
 	.section1_tema2 .content_wrapper p{
 		grid-column: 1/5;
+		max-width: 60ch;
+		margin-inline: auto;
 	}
 	
 	.section1_tema2 .content_wrapper  .img1 {
@@ -855,6 +922,7 @@ header > *:nth-child(2) {
 	}
 	.section1_tema3 .content_wrapper p:nth-child(3){
 		column-count: 1;
+		max-width: 60ch;
 	}
 	
 	.section1_tema3 .content_wrapper  .img1 {
@@ -891,6 +959,7 @@ header > *:nth-child(2) {
 	}
 	.section2_tema3 .content_wrapper p:nth-child(3){
 		column-count: 1;
+		max-width: 60ch;
 	}
 	
 	.section2_tema3 .content_wrapper  .img1 {
@@ -935,6 +1004,7 @@ header > *:nth-child(2) {
 	}
 	.section1_tema4 .content_wrapper p:nth-child(3){
 		column-count: 1;
+		max-width: 60ch;
 	}
 	
 	.section1_tema4 .content_wrapper  .img1 {
@@ -970,6 +1040,7 @@ header > *:nth-child(2) {
 	}
 	.section2_tema4 .content_wrapper p:nth-child(3){
 		column-count: 1;
+		max-width: 60ch;
 	}
 	
 	.section2_tema4 .content_wrapper  .img1 {
@@ -995,7 +1066,7 @@ header > *:nth-child(2) {
 		position: relative;
 		width: 100%;
 		height: 0;
-		padding-top: 56.25%;
+		padding-top: 57.25%;
 	 }
 }
 
@@ -1028,6 +1099,7 @@ header > *:nth-child(2) {
 	.section1_tema5 .content_wrapper p{
 		width: 100%;
 		grid-column: 1/5;
+		max-width: 60ch;
 	}
 	
 	
@@ -1052,6 +1124,9 @@ header > *:nth-child(2) {
 	.section2_tema5{
 		margin-top: 2rem;
 	}
+	.section2_tema5 p{
+		max-width: 60ch;
+	}
 	.section2_tema5 h2{
 		grid-column: 4/8;
 		text-align: center;
@@ -1067,11 +1142,15 @@ header > *:nth-child(2) {
 		grid-template-columns: 1fr;
 	}
 	.section2_tema5 .content_wrapper ul{
-		margin-inline: 6rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 	.section2_tema5 .content_wrapper ul li{
 		list-style: circle;
 		margin-bottom: 1.5rem;
+		max-width: 60ch;
 	}
 	
 
@@ -1188,9 +1267,17 @@ header > *:nth-child(2) {
 		grid-column: 4/5;
 		grid-row: 2/3;
 	}
-	.skills_container div:last-child{
+	.skills_container div:nth-child(11){
 		grid-column: 4/5;
 		grid-row: 3/4;
+	}
+	.skills_container div:nth-child(12){
+		grid-column: 4/5;
+		grid-row: 4/5;
+	}
+	.skills_container div:last-child{
+		grid-column: 4/5;
+		grid-row: 5/6;
 	}
 
 	
